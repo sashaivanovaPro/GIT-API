@@ -93,3 +93,18 @@ a {
   text-decoration: none;
   color: white;
 }
+
+.repos {
+  margin-bottom: 1.8rem;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  margin-bottom: 2rem;
+  list-style: square;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.repo__link {
+  font-size: 1rem;
+  vertical-align: bottom;
+}
