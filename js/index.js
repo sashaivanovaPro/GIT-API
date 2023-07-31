@@ -16,15 +16,13 @@ const searchUser = async () => {
   const req = await fetch(url);
   const res = await req.json();
   renderProfile(res);
-  console.log(res);
+  const repoApi = `${res.repos_url}`;
+  getRepo(repoApi);
 };
 
-const repoApi = "https://api.github.com/users/NikZhukov2505/repos";
-
-const getRepo = async () => {
-  let url = repoApi;
-  console.log(url);
-  const request = await fetch(url);
+const getRepo = async (repoApi) => {
+  let url2 = repoApi;
+  const request = await fetch(url2);
   const response = await request.json();
   renderRepo(response);
   console.log(response);
@@ -35,7 +33,6 @@ const getRepo = async () => {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   searchUser();
-  getRepo();
 });
 
 /// Шаг 5 - получаем пользоваетльску инфу и отправляем её в ДОМ
